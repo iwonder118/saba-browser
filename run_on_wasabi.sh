@@ -4,7 +4,7 @@ HOME_PATH=$PWD
 TARGET_PATH=$PWD"/build"
 OS_PATH=$TARGET_PATH"/wasabi"
 
-APP_NAME="saba-browser"
+APP_BIN_PATH="$HOME_PATH/target/x86_64-unknown-none/release/saba"
 MAKEFILE_PATH=$HOME_PATH"/Makefile"
 
 if [ -d $TARGET_PATH ]
@@ -37,4 +37,4 @@ then
 fi
 
 make build
-$OS_PATH/scripts/run_with_app.sh ./target/x86_64-unknown-none/release/$APP_NAME
+$OS_PATH/scripts/run_with_app.sh "$APP_BIN_PATH"
