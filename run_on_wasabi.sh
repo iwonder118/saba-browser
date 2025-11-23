@@ -37,4 +37,4 @@ then
 fi
 
 make build
-$OS_PATH/scripts/run_with_app.sh "$APP_BIN_PATH"
+TCP_FORWARD_PORT=18081 $OS_PATH/scripts/run_with_app.sh "$APP_BIN_PATH"

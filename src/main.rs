@@ -12,7 +12,9 @@ use core::result::Result::{Ok, Err};
 
 fn main() -> u64 {
     let client = HttpClient::new();
-    match client.get("example.com".to_string(), 80, "/".to_string()) {
+    // Access the host machine via QEMU's user-net helper (10.0.2.2).
+    // Use a high port to avoid requiring root privileges on the host side.
+    match client.get("host.test".to_string(), 18080, "/test.html".to_string()) {
         Ok(res) => {
             print!("response:\n{:#?}", res);
         }
